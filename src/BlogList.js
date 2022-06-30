@@ -13,12 +13,12 @@ const BlogList = ({blogs, title, handleDelete}) => {
                 <h2>{blog.title}</h2>
                 <p>{blog.body}</p>
                 <span>Writen by {blog.author}</span>
-                <button onClick={() => handleDelete(blog.id)}>Delete Blog</button>
                 </div>
             ))}
         </div>
     );
 }
+//                <button onClick={() => handleDelete(blog.id)}>Delete Blog</button>
 
 export default BlogList;
 

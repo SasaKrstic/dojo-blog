@@ -4,12 +4,8 @@ import BlogList from "./BlogList";
 
 const Home = () => {
   
-  const [blogs, setBlogs] = useState([
-    { title: 'My new website', body: 'lorem...', author: 'Sasa', id: 1 },
-    { title: 'Welcome party!', body: 'lorem...', author: 'Mario', id: 2 },
-    { title: 'Web dev top tips', body: 'lorem...', author: 'Luigi', id: 3 },
-    { title: 'Moj prvi react kurs', body: 'lorem  ipsum ...', author: 'Sasa', id: 4 },
-  ]);
+  const [blogs, setBlogs] = useState(null);
+  //brisemo prethodni niz, ne koristimo ga, stavljamo da je niz value null, zatim u useEffect ubacujemo
   
   const [name, setName] = useState('Mario');
   
@@ -19,21 +15,26 @@ const Home = () => {
   }
   
   useEffect(() => {
-    console.log('use Effect ran');
-    // console.log(blogs);
-    console.log(name);
-  }, [name]);
+    fetch('http://localhost:8000/blogs')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      setBlogs(data);
+    });
+  }, []);
    
     
     return(
       <div className="home">
-          <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
-          <BlogList blogs={blogs.filter((blog) => blog.author === 'Sasa' )} title="Sašini Blogovi!" />
+         { blogs &&  <BlogList blogs={blogs} title="All Blogs!" />}
           <button onClick={() => setName('Nenad')}>Promeni ime</button>
           <h3>{name}</h3>
       </div>  
     );
 }
+
+// { blogs &&  <BlogList blogs={blogs.filter((blog) => blog.author === 'Sasa' )} title="Sašini Blogovi!" />}
 /* blogs={blogs}>  je prop
 title je all blogs STRING */
 export default Home; 
