@@ -6,31 +6,32 @@ const Home = () => {
   
   const [blogs, setBlogs] = useState(null);
   //brisemo prethodni niz, ne koristimo ga, stavljamo da je niz value null, zatim u useEffect ubacujemo
+  const [isPending, setIsPending] = useState(true);
   
   const [name, setName] = useState('Mario');
   
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter(blog => blog.id !== id);
-    setBlogs(newBlogs);
-  }
-  
+
   useEffect(() => {
-    fetch('http://localhost:8000/blogs')
-    .then(res => {
-      return res.json();
-    })
-    .then(data => {
-      setBlogs(data);
-    });
+    setTimeout(() => {
+      fetch('http://localhost:8000/blogs')
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        setBlogs(data);
+        setIsPending(false);
+      });
+    }, 1000);
   }, []);
    
     
     return(
-      <div className="home">
-         { blogs &&  <BlogList blogs={blogs} title="All Blogs!" />}
-          <button onClick={() => setName('Nenad')}>Promeni ime</button>
-          <h3>{name}</h3>
-      </div>  
+         <div className="home">
+            {isPending &&  <div>LOADING...</div>}
+            {blogs &&  <BlogList blogs={blogs} title="All Blogs!" />}
+            <button onClick={() => setName('Nenad')}>Promeni ime</button>
+            <h3>{name}</h3>
+        </div>  
     );
 }
 
