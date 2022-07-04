@@ -15,6 +15,7 @@ const Home = () => {
     fetch('http://localhost:8000/blogs')
       .then(res => {
         console.log(res);
+        
         if (!res.ok){
           throw Error('Ne mozemo fetchovati podatke za taj izvor');
         }
