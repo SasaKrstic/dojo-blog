@@ -16,12 +16,6 @@
       "title": "Sasin Blog",
       "body": "lorem",
       "author": "Mario",
-      "id": 3
-    },
-    {
-      "title": "Sasin Blog",
-      "body": "lorem",
-      "author": "Mario",
       "id": 4
     },
     {
@@ -52,55 +46,7 @@
       "title": "31231231",
       "body": "21312312321",
       "author": "yoshi",
-      "id": 9
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
       "id": 10
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 11
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 12
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 13
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 14
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 15
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 16
-    },
-    {
-      "title": "31231231",
-      "body": "21312312321",
-      "author": "yoshi",
-      "id": 17
     },
     {
       "title": "31231231",
@@ -113,12 +59,6 @@
       "body": "Atila lorem",
       "author": "Mario",
       "id": 19
-    },
-    {
-      "title": "Hello Ninjas",
-      "body": "lorem text.....",
-      "author": "Mario",
-      "id": 20
     }
   ]
 }
