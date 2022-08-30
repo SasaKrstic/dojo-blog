@@ -1,0 +1,1 @@
+export const JSON_API = 'https://sasa-react.herokuapp.com/api'
