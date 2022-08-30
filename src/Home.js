@@ -2,7 +2,7 @@ import BlogList from "./BlogList";
 import useFetch from "./useFetch";
 
 const Home = () => {
-  const { error, isPending, data: blogs } = useFetch('http://localhost:8000/blogs')
+  const { error, isPending, data: blogs } = useFetch('https://www.dizajn.subotica.ws/react/dojo-blog/blogs')
 
   return (
     <div className="home">
@@ -10,7 +10,7 @@ const Home = () => {
       { isPending && <div>Loading...</div> }
       { blogs && <BlogList blogs={blogs} /> }
     </div>
-  ); 
+  );  
 }
  
 export default Home;
